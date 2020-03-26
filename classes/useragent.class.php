@@ -1,14 +1,9 @@
 <?php
 /*
-	Produced 2019
-	By https://github.com/amattu2
+	Produced 2019-2020
+	By https://amattu.com/links/github
 	Copy Alec M.
 	License GNU Affero General Public License v3.0
-*/
-
-/*
-	Notes:
-	- Based off of an unknown project from Github
 */
 
 class UserAgent {
@@ -38,13 +33,27 @@ class UserAgent {
 		'Search Bot' => '(nuhk)|(Googlebot)|(Yammybot)|(Openbot)|(Slurp/cat)|(msnbot)|(ia_archiver)'
 	);
 
-	// Constructor
-	function __construct($UA) {
-		$this->userAgent = $UA;
+	/**
+	 * Class Constructor
+	 *
+	 * @param string $useragent
+	 * @throws None
+	 * @author Alec M. <https://amattu.com>
+	 * @date 2020-03-26T19:19:18-040
+	 */
+	public function __construct(string $useragent) {
+		$this->userAgent = $useragent;
 	}
 
-	// Get Operating System
-	function get() {
+	/**
+	 * Get User Agent String
+	 *
+	 * @return String User Agent
+	 * @throws None
+	 * @author Alec M. <https://amattu.com>
+	 * @date 2020-03-26T19:19:48-040
+	 */
+	public function get() : string {
 		// Loop
 		foreach($this->systems as $os => $preg_pattern) {
 			if (preg_match('@' . $preg_pattern . '@', $this->userAgent)) {
