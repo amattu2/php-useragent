@@ -37,7 +37,7 @@ class UserAgent {
 	 *
 	 * @param string User Agent Header
 	 * @return string User Agent
-	 * @throws None
+	 * @throws TypeError
 	 * @author Alec M. <https://amattu.com>
 	 * @date 2020-03-26T19:19:48-040
 	 */
