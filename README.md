@@ -7,14 +7,9 @@ Include **/classes/useragent.class.php**
 require(dirname(__FILE__) . "/classes/useragent.class.php");
 ```
 
-Create a UserAgent instance
+Access UserAgent::get method
 ```
-new UserAgent($_SERVER['HTTP_USER_AGENT']);
-```
-
-Determine the operating system
-```
-UserAgent->get()
+UserAgent::get($_SERVER['HTTP_USER_AGENT']);
 ```
 
 See **index.php** for examples.

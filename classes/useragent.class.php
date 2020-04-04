@@ -8,8 +8,7 @@
 
 class UserAgent {
 	// Class Variables
-	private $userAgent = "";
-	private $systems = Array(
+	protected static $systems = Array(
 		'iPhone' => '(iPhone)',
 		'Windows 3.11' => 'Win16',
 		'Windows 95' => '(Windows 95)|(Win95)|(Windows_95)',
@@ -34,29 +33,18 @@ class UserAgent {
 	);
 
 	/**
-	 * Class Constructor
-	 *
-	 * @param string $useragent
-	 * @throws None
-	 * @author Alec M. <https://amattu.com>
-	 * @date 2020-03-26T19:19:18-040
-	 */
-	public function __construct(string $useragent) {
-		$this->userAgent = $useragent;
-	}
-
-	/**
 	 * Get User Agent String
 	 *
-	 * @return String User Agent
+	 * @param string User Agent Header
+	 * @return string User Agent
 	 * @throws None
 	 * @author Alec M. <https://amattu.com>
 	 * @date 2020-03-26T19:19:48-040
 	 */
-	public function get() : string {
+	public static function get(string $agent) : string {
 		// Loop
-		foreach($this->systems as $os => $preg_pattern) {
-			if (preg_match('@' . $preg_pattern . '@', $this->userAgent)) {
+		foreach(self::$systems as $os => $pattern) {
+			if (preg_match('@' . $pattern . '@', $agent)) {
 				return $os;
 			}
 		}
