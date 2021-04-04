@@ -14,11 +14,13 @@ UserAgent::get($_SERVER['HTTP_USER_AGENT']);
 
 See **index.php** for examples.
 
-# Previews
-N/A
-
 # Notes
-N/A
+Original source
+```
+Author: Daniel Kassner
+Website: http://www.danielkassner.com
+https://stackoverflow.com/questions/12070090/need-help-to-get-os-information-in-php
+```
 
 # Requirements & Dependencies
-N/A
+PHP7
